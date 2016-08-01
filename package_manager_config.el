@@ -30,5 +30,8 @@
              :commands ensime ensime-mode)
 (use-package flycheck)
 (use-package haskell-mode)
+(use-package intero)
+(use-package projectile)
+(use-package helm-projectile)
 ;;; package_manager_config.el ends here
 

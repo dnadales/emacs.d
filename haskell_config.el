@@ -7,6 +7,10 @@
 ;;; Code:
 (require 'haskell-mode)
 
+;; TODO: not all the features I need are supported in intero-mode
+;; Left for the future.
+;; (add-hook 'haskell-mode-hook 'intero-mode)
+
 ;; Using hasktags
 (let ((my-cabal-path (expand-file-name "~/.local/bin")))
   (setenv "PATH" (concat my-cabal-path path-separator (getenv "PATH")))
@@ -69,5 +73,9 @@
 ;; Auto-adding module imports
 (custom-set-variables
  '(haskell-process-suggest-hoogle-imports t))
+
+
+;; Enable projectile
+(add-hook 'haskell-mode-hook 'projectile-mode)
 
 ;;; haskell_config.el ends here
