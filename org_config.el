@@ -80,4 +80,16 @@
       org-log-into-drawer t
       org-odd-levels-only t)
 
+;; Load scala mode
+(org-babel-do-load-languages
+ 'org-babel-load-languages '(
+                             (scala . t)
+                             (haskell . t)
+                             )
+ )
+
+;; Org-reveal
+(setq org-reveal-root "file:///home/damian/opt/revealjs/reveal.js")
+
+
 ;;; org_config.el ends here

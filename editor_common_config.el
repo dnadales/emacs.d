@@ -82,6 +82,14 @@
 ;; Display the column number.
 (setq column-number-mode t)
 
+;; Use yasnippet when in programming mode.
+(require 'haskell-snippets)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+
+;; Enable projectile globally.
+(projectile-global-mode)
+
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a
 ;; server). This is quite useful for having only a single instance of

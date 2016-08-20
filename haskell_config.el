@@ -74,8 +74,4 @@
 (custom-set-variables
  '(haskell-process-suggest-hoogle-imports t))
 
-
-;; Enable projectile
-(add-hook 'haskell-mode-hook 'projectile-mode)
-
 ;;; haskell_config.el ends here
