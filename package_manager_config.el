@@ -12,7 +12,10 @@
 (setq
  use-package-always-ensure t
  package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                    ("melpa" . "http://melpa.org/packages/")))
+		    ("melpa-stable" . "https://stable.melpa.org/packages/")
+                    ("melpa" . "http://melpa.org/packages/"))
+ )
+
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 (package-initialize)
@@ -28,7 +31,8 @@
 
 ;; Required packages
 (use-package ensime
-             :commands ensime ensime-mode)
+  :commands ensime ensime-mode
+  :pin melpa-stable)
 (use-package flycheck)
 (use-package haskell-mode)
 ;(use-package intero) // To inmature to use right now (06/08/2016)
