@@ -91,5 +91,10 @@
 ;; Org-reveal
 (setq org-reveal-root "file:///home/damian/opt/revealjs/reveal.js")
 
+;; Refile
+(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-targets (quote ((nil :maxlevel . 9)
+                                 (org-agenda-files :maxlevel . 9))))
 
 ;;; org_config.el ends here
