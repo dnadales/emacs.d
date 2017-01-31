@@ -5,6 +5,13 @@
 ;;; My Emacs configuration.
 ;;;
 ;;; Code:
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (provide 'init)
 
 (load "~/.emacs.d/package_manager_config.el")
@@ -28,7 +35,10 @@
  '(haskell-process-type (quote stack-ghci))
  '(haskell-stylish-on-save t)
  '(haskell-tags-on-save t)
- '(js-indent-level 2))
+ '(js-indent-level 2)
+ '(package-selected-packages
+   (quote
+    (buffer-move use-package helm-projectile haskell-snippets haskell-mode flycheck ensime))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -39,5 +39,7 @@
 (use-package projectile)
 (use-package haskell-snippets)
 (use-package helm-projectile)
+(use-package buffer-move)
+
 ;;; package_manager_config.el ends here
 
