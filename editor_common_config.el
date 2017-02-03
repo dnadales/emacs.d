@@ -50,7 +50,7 @@
 ;;(set-frame-font "Droid Sans Mono-11");
 ;;(set-frame-font "Ubuntu Mono-12");
 ;;(set-frame-font "Inconsolata-10");
-(set-frame-font "Source Code Pro-12");
+(set-frame-font "Source Code Pro-14");
 
 ;; Backup settings
 (setq

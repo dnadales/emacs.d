@@ -39,7 +39,7 @@
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (buffer-move use-package helm-projectile haskell-snippets haskell-mode flycheck ensime))))
+    (yaml-mode flymd gh-md markdown-mode buffer-move use-package helm-projectile haskell-snippets haskell-mode flycheck ensime))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
