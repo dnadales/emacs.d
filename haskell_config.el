@@ -24,6 +24,10 @@
                  (append '((company-capf company-dabbrev-code))
                          company-backends))))
 
+(add-hook 'haskell-mode-hook
+          (lambda ()
+            (flyspell-prog-mode)))
+
 ;; Use stilish-haskell.
 ;; Remember to do `stack install stylish-haskell`.
 (custom-set-variables

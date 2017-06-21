@@ -7,7 +7,7 @@
 ;;; Code:
 
 ;; Set a theme, if the default one is not desired.
-;(load-theme 'manoj-dark)
+(load-theme 'tango-dark)
 ;(invert-face 'default)
 
 ;; auto close bracket insertion. New in emacs 24
@@ -91,7 +91,6 @@
 (projectile-global-mode)
 
 ;; Copy file path to clipboard.
-
 (defun xah-copy-file-path (&optional *dir-path-only-p)
   "Copy the current buffer's file path or dired path to `kill-ring'.
 Result is full path.
@@ -114,6 +113,13 @@ Version 2016-07-17"
        (progn
          (message "Directory path copied: 「%s」" (file-name-directory -fpath))
          (file-name-directory -fpath))))))
+
+;; Add MacOS path to the search path:
+(setq exec-path (append exec-path '("/usr/local/bin/")))
+
+;; Enable indent tools
+(require 'indent-tools)
+(global-set-key (kbd "C-c >") 'indent-tools-hydra/body)
 
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a

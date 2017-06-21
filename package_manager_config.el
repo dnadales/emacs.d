@@ -40,6 +40,7 @@
 (use-package haskell-snippets)
 (use-package helm-projectile)
 (use-package buffer-move)
+(use-package indent-tools)
 
 ;;; package_manager_config.el ends here
 
