@@ -7,7 +7,7 @@
 ;;; Code:
 (require 'org)
 
-(setq org-directory "~/CloudStation/org/")
+(setq org-directory "~/Dropbox/docs/org/")
 
 (setq agenda-path (concat org-directory "agenda.org"))
 
