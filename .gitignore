@@ -6,3 +6,5 @@ org-clock*
 projectile-bookmarks.eld
 network-security.data
 recentf
+projectile.cache
+server
