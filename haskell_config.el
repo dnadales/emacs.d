@@ -3,7 +3,7 @@
 ;;; Author: Damian Nadales
 ;;;
 ;;; Commentary:
-;;; 
+;;;
 ;;; Code:
 (require 'haskell-mode)
 
@@ -28,10 +28,9 @@
           (lambda ()
             (flyspell-prog-mode)))
 
-;; Use stilish-haskell.
-;; Remember to do `stack install stylish-haskell`.
-(custom-set-variables
- '(haskell-stylish-on-save t))
+;; stack install hindent
+(require 'hindent)
+(add-hook 'haskell-mode-hook #'hindent-mode)
 
 ;; Enable auto-insertion of module templates.
 (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
@@ -77,5 +76,9 @@
 ;; Auto-adding module imports
 (custom-set-variables
  '(haskell-process-suggest-hoogle-imports t))
+
+;; Improved flycheck
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
 ;;; haskell_config.el ends here
