@@ -35,12 +35,14 @@
   :pin melpa-stable)
 (use-package flycheck)
 (use-package haskell-mode)
-;(use-package intero) // To inmature to use right now (06/08/2016)
+;; (use-package intero) Too inmature to use right now (24/08/2017)
 (use-package projectile)
 (use-package haskell-snippets)
 (use-package helm-projectile)
 (use-package buffer-move)
 (use-package indent-tools)
+(use-package hindent)
+(use-package flycheck-haskell)
 
 ;;; package_manager_config.el ends here
 
