@@ -47,10 +47,20 @@
 (tool-bar-mode -1)
 
 ;; Fonts:
-;;(set-frame-font "Droid Sans Mono-11");
-;;(set-frame-font "Ubuntu Mono-12");
-;;(set-frame-font "Inconsolata-10");
-(set-frame-font "Source Code Pro-14");
+;;
+;; Other nice fonts I've used in the past:
+;;
+;;   - "Droid Sans Mono-11"
+;;   - "Ubuntu Mono-12"
+;;   -  "Inconsolata-10"
+;;
+(cond
+ ((string-equal system-type "gnu/linux")
+  (set-frame-font "Source Code Pro-14");
+  )
+
+ ((string-equal system-type "windows-nt")
+  (set-frame-font "Consolas-12")))
 
 ;; Backup settings
 (setq
@@ -114,12 +124,19 @@ Version 2016-07-17"
          (message "Directory path copied: 「%s」" (file-name-directory -fpath))
          (file-name-directory -fpath))))))
 
-;; Add MacOS path to the search path:
-(setq exec-path (append exec-path '("/usr/local/bin/")))
+;; Aspell-related configuration
+(cond
+ ((string-equal system-type "windows-nt")
+
+  (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
+  (setq ispell-program-name "aspell")
+  (setq ispell-personal-dictionary "C:/Users/nadalesagutde/.ispell")))
 
 ;; Enable indent tools
 (require 'indent-tools)
 (global-set-key (kbd "C-c >") 'indent-tools-hydra/body)
+
+(setq ring-bell-function 'ignore)
 
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a
