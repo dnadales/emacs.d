@@ -56,7 +56,7 @@
 ;;
 (cond
  ((string-equal system-type "gnu/linux")
-  (set-frame-font "Source Code Pro-14");
+  (set-frame-font "Inconsolata-12");
   )
 
  ((string-equal system-type "windows-nt")
