@@ -7,8 +7,10 @@
 ;;; Code:
 
 ;; Set a theme, if the default one is not desired.
-(load-theme 'tango-dark)
-;(invert-face 'default)
+;;(load-theme 'tango-dark)
+;;(load-theme 'tango)
+(load-theme 'leuven)
+;;(invert-face 'default)
 
 ;; auto close bracket insertion. New in emacs 24
 (electric-pair-mode 1)
@@ -66,7 +68,7 @@
 (setq
    backup-by-copying t      ; don't clobber symlinks
    backup-directory-alist
-    '(("." . "~/.saves"))    ; don't litter my fs tree
+    '(("." . "~/.emacs.d/backups/"))    ; don't litter my fs tree
    delete-old-versions t
    kept-new-versions 6
    kept-old-versions 2
@@ -80,7 +82,7 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; Enable flyckeck globally.
-(global-flycheck-mode)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; Enable company mode globally.
 (add-hook 'after-init-hook 'global-company-mode)
@@ -143,5 +145,19 @@ Version 2016-07-17"
 ;; server). This is quite useful for having only a single instance of
 ;; the editor running.
 (server-start)
+
+;; TorXakis mode. For now we put this configuration here, till this mode is published on melpa.
+(require 'torxakis-mode)
+(defun my-prog-mode-hook ()
+  "My programming mode hook."
+  (setq tab-width 4))
+(add-hook 'prog-mode-hook #'my-prog-mode-hook)
+
+;; I don't use a secondary overlay for now.
+(global-unset-key [M-mouse-1])
+(global-unset-key [M-drag-mouse-1])
+(global-unset-key [M-down-mouse-1])
+(global-unset-key [M-mouse-3])
+(global-unset-key [M-mouse-2])
 
 ;;; editor_common_config.el ends here.
