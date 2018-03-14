@@ -15,7 +15,16 @@
 (let ((my-cabal-path (expand-file-name "~/.local/bin")))
   (setenv "PATH" (concat my-cabal-path path-separator (getenv "PATH")))
   (add-to-list 'exec-path my-cabal-path))
-(custom-set-variables '(haskell-tags-on-save t))
+(custom-set-variables
+ '(haskell-tags-on-save t)
+ ;; Customization related to indentation.
+ '(haskell-indentation-layout-offset 4)
+ '(haskell-indentation-starter-offset 4)
+ '(haskell-indentation-left-offset 4)
+ '(haskell-indentation-where-pre-offset 4)
+ '(haskell-indentation-where-post-offset 2)
+ '(haskell-indentation-electric-flag t)
+ )
 
 ;; To combine output from different backends in the autocompletion.
 (add-hook 'haskell-mode-hook
