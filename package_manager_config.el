@@ -35,7 +35,7 @@
   :pin melpa-stable)
 (use-package flycheck)
 (use-package haskell-mode)
-;; (use-package intero) Too inmature to use right now (24/08/2017)
+(use-package intero) ;; Too inmature to use right now (24/08/2017)
 (use-package projectile)
 (use-package haskell-snippets)
 (use-package helm-projectile)

@@ -7,9 +7,9 @@
 ;;; Code:
 
 ;; Set a theme, if the default one is not desired.
-;;(load-theme 'tango-dark)
+(load-theme 'tango-dark)
 ;;(load-theme 'tango)
-(load-theme 'leuven)
+;;(load-theme 'leuven)
 ;;(invert-face 'default)
 
 ;; auto close bracket insertion. New in emacs 24
@@ -80,6 +80,7 @@
    "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . markdown-mode))
 
 ;; Enable flyckeck globally.
 (add-hook 'after-init-hook #'global-flycheck-mode)
@@ -160,4 +161,10 @@ Version 2016-07-17"
 (global-unset-key [M-mouse-3])
 (global-unset-key [M-mouse-2])
 
-;;; editor_common_config.el ends here.
+;; Use xref-via helm.
+(require 'helm-xref)
+(setq xref-show-xrefs-function 'helm-xref-show-xrefs)
+
+(provide 'editor_common_config)
+;;; editor_common_config.el ends here
+
