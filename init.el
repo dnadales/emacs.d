@@ -19,8 +19,8 @@
 (load "~/.emacs.d/helm_config.el")
 (load "~/.emacs.d/org_config.el")
 (load "~/.emacs.d/windows_management_config.el")
-(load "~/.emacs.d/haskell_config.el")
-;;(load "~/.emacs.d/haskell_intero_config.el")
+;;(load "~/.emacs.d/haskell_config.el")
+(load "~/.emacs.d/haskell_intero_config.el")
 (load "~/.emacs.d/scala_config.el")
 
 ;;; init.el ends here

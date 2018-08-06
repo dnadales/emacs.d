@@ -8,3 +8,8 @@ network-security.data
 recentf
 projectile.cache
 server
+session.*
+elisp/*
+.cask
+*backup*
+TAGS
