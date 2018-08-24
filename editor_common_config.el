@@ -60,7 +60,7 @@
 ;;   - "Hack-10"
 (cond
  ((string-equal system-type "gnu/linux")
-  (set-frame-font "Hack-10");
+  (set-frame-font "DejaVu Sans Mono-10");
   )
 
  ((string-equal system-type "windows-nt")
@@ -143,6 +143,9 @@ Version 2016-07-17"
 
 (setq ring-bell-function 'ignore)
 
+;; Enable the helm prjectile shortcut.
+(global-set-key (kbd "C-c p h") 'helm-projectile)
+
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a
 ;; server). This is quite useful for having only a single instance of
@@ -150,11 +153,11 @@ Version 2016-07-17"
 (server-start)
 
 ;; TorXakis mode. For now we put this configuration here, till this mode is published on melpa.
-(require 'torxakis-mode)
-(defun my-prog-mode-hook ()
-  "My programming mode hook."
-  (setq tab-width 4))
-(add-hook 'prog-mode-hook #'my-prog-mode-hook)
+;; (require 'torxakis-mode)
+;; (defun my-prog-mode-hook ()
+;;   "My programming mode hook."
+;;   (setq tab-width 4))
+;; (add-hook 'prog-mode-hook #'my-prog-mode-hook)
 
 ;; I don't use a secondary overlay for now.
 (global-unset-key [M-mouse-1])

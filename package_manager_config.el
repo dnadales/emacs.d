@@ -43,6 +43,7 @@
 (use-package indent-tools)
 (use-package hindent)
 (use-package flycheck-haskell)
+(use-package helm-xref)
 
 ;;; package_manager_config.el ends here
 
