@@ -54,11 +54,13 @@
 ;;
 ;;   - "Droid Sans Mono-11"
 ;;   - "Ubuntu Mono-12"
-;;   -  "Inconsolata-10"
-;;
+;;   - "DejaVu Sans Mono-9"
+;;   - "Inconsolata-10"
+;;   - "Fira Code-8": sudo apt-get install fonts-firacode
+;;   - "Hack-10"
 (cond
  ((string-equal system-type "gnu/linux")
-  (set-frame-font "Inconsolata-12");
+  (set-frame-font "Hack-10");
   )
 
  ((string-equal system-type "windows-nt")
