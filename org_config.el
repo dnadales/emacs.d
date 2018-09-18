@@ -97,4 +97,7 @@
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
 
+;; Do not use the emacs theme to highlight code in the generated html.
+(setq org-html-htmlize-output-type 'css)
+
 ;;; org_config.el ends here

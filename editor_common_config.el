@@ -8,6 +8,7 @@
 
 ;; Set a theme, if the default one is not desired.
 (load-theme 'tango-dark)
+;;(load-theme 'adwaita)
 ;;(load-theme 'tango)
 ;;(load-theme 'leuven)
 ;;(invert-face 'default)

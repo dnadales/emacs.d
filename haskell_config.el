@@ -17,12 +17,14 @@
   (add-to-list 'exec-path my-cabal-path))
 (custom-set-variables
  '(haskell-tags-on-save t)
- ;; Customization related to indentation.
- '(haskell-indentation-layout-offset 4)
- '(haskell-indentation-starter-offset 4)
- '(haskell-indentation-left-offset 4)
- '(haskell-indentation-where-pre-offset 4)
- '(haskell-indentation-where-post-offset 2)
+ ;;
+ ;; Customization related to indentation. Left here in case you need to tweak the default values.
+ ;;
+ ;; '(haskell-indentation-layout-offset 4)
+ ;; '(haskell-indentation-starter-offset 4)
+ ;; '(haskell-indentation-left-offset 4)
+ ;; '(haskell-indentation-where-pre-offset 4)
+ ;; '(haskell-indentation-where-post-offset 2)
  '(haskell-indentation-electric-flag t)
  )
 
