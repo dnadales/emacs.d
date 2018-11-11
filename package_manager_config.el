@@ -45,6 +45,8 @@
 (use-package flycheck-haskell)
 (use-package helm-xref)
 (use-package markdown-mode)
+(use-package mmm-mode)
+(use-package color-theme-sanityinc-tomorrow)
 
 ;;; package_manager_config.el ends here
 

@@ -7,11 +7,13 @@
 ;;; Code:
 
 ;; Set a theme, if the default one is not desired.
-(load-theme 'tango-dark)
+;;(load-theme 'tango-dark)
+;;(load-theme 'wombat)
 ;;(load-theme 'adwaita)
 ;;(load-theme 'tango)
 ;;(load-theme 'leuven)
 ;;(invert-face 'default)
+(load-theme 'sanityinc-tomorrow-night)
 
 ;; auto close bracket insertion. New in emacs 24
 (electric-pair-mode 1)
