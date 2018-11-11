@@ -31,8 +31,8 @@
  c-basic-offset 4)
 
 ;; Text modes hooks.
-(add-hook 'text-mode-hook 'turn-on-auto-fill)
 (add-hook 'text-mode-hook 'turn-on-flyspell)
+(add-hook 'text-mode-hook 'turn-off-auto-fill)
 
 ;; Columns:
 ;; Set the number to the number of columns to use.

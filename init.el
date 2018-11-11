@@ -20,8 +20,9 @@
 (load "~/.emacs.d/org_config.el")
 (load "~/.emacs.d/windows_management_config.el")
 (load "~/.emacs.d/haskell_config.el")
+(load "~/.emacs.d/latex_config.el")
 ;; (load "~/.emacs.d/haskell_intero_config.el")
-(load "~/.emacs.d/scala_config.el")
+;;(load "~/.emacs.d/scala_config.el")
 
 ;;; init.el ends here
 (custom-set-variables
@@ -48,8 +49,7 @@
  '(org-export-backends (quote (ascii html icalendar latex md odt)))
  '(package-selected-packages
    (quote
-    (helm-xref elm-mode flycheck-demjsonlint json-mode vmd-mode company-nixos-options nix-buffer nix-sandbox helm-nixos-options nix-mode intero htmlize paredit flycheck-haskell markdown-mode+ protobuf-mode terraform-mode color-theme-solarized solarized-theme anti-zenburn-theme hc-zenburn-theme labburn-theme zenburn-theme hydra indent-tools groovy-mode docker dockerfile-mode cypher-mode ox-reveal yaml-mode flymd gh-md markdown-mode buffer-move use-package helm-projectile haskell-snippets haskell-mode flycheck ensime)))
- )
+    (mmm-mode auctex helm-xref elm-mode flycheck-demjsonlint json-mode vmd-mode company-nixos-options nix-buffer nix-sandbox helm-nixos-options nix-mode intero htmlize paredit flycheck-haskell markdown-mode+ protobuf-mode terraform-mode color-theme-solarized solarized-theme anti-zenburn-theme hc-zenburn-theme labburn-theme zenburn-theme hydra indent-tools groovy-mode docker dockerfile-mode cypher-mode ox-reveal yaml-mode flymd gh-md markdown-mode buffer-move use-package helm-projectile haskell-snippets haskell-mode flycheck ensime))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
