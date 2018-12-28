@@ -34,4 +34,12 @@
 ; for new regions of Haskell code in the \begin{code}...\end{code} blocks.
 (setq mmm-parse-when-idle 't)
 
+
+;; Turn on RefTeX with AucTex
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+;; RefTeX configuration
+(setq-default TeX-master nil) ; Query for master file.
+(setq TeX-parse-self t) ; Enable parse on load.
+(setq TeX-auto-save t) ; Enable parse on save.
+
 ;;; latex_config.el ends here

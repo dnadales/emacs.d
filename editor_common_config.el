@@ -7,10 +7,12 @@
 ;;; Code:
 
 ;; Set a theme, if the default one is not desired.
-(load-theme 'sanityinc-tomorrow-night)
+;;(load-theme 'sanityinc-tomorrow-night)
 ;;(load-theme 'tango-dark)
 ;;(load-theme 'wombat)
 ;;(load-theme 'adwaita)
+;;(load-theme 'dichromacy)
+(load-theme 'whiteboard)
 ;;(load-theme 'tango)
 ;;(load-theme 'leuven)
 ;;(invert-face 'default)
@@ -54,17 +56,14 @@
 
 ;; Fonts:
 ;;
-;; Other nice fonts I've used in the past:
-;;
-;;   - "Droid Sans Mono-11"
-;;   - "Ubuntu Mono-12"
-;;   - "DejaVu Sans Mono-9"
-;;   - "Inconsolata-10"
-;;   - "Fira Code-8": sudo apt-get install fonts-firacode
-;;   - "Hack-10"
 (cond
  ((string-equal system-type "gnu/linux")
-  (set-frame-font "DejaVu Sans Mono-10");
+  (set-frame-font "Hack-8") ;; sudo apt-get install fonts-hack-ttf
+  ;; Other nice fonts I've used in the past:
+  ;; (set-frame-font "DejaVu Sans Mono-8")
+  ;; (set-frame-font "Ubuntu Mono-10")
+  ;; (set-frame-font "Fira Code-8") ;; sudo apt-get install fonts-firacode
+  ;; (set-frame-font "Inconsolata-10") ;; sudo apt-get install fonts-inconsolata
   )
 
  ((string-equal system-type "windows-nt")
@@ -157,11 +156,11 @@ Version 2016-07-17"
 (server-start)
 
 ;; TorXakis mode. For now we put this configuration here, till this mode is published on melpa.
-;; (require 'torxakis-mode)
-;; (defun my-prog-mode-hook ()
-;;   "My programming mode hook."
-;;   (setq tab-width 4))
-;; (add-hook 'prog-mode-hook #'my-prog-mode-hook)
+(require 'torxakis-mode)
+(defun my-prog-mode-hook ()
+  "My programming mode hook."
+  (setq tab-width 4))
+(add-hook 'prog-mode-hook #'my-prog-mode-hook)
 
 ;; I don't use a secondary overlay for now.
 (global-unset-key [M-mouse-1])
@@ -174,6 +173,8 @@ Version 2016-07-17"
 (require 'helm-xref)
 (setq xref-show-xrefs-function 'helm-xref-show-xrefs)
 
+;; Delete trailing whitespace on save, globally.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (provide 'editor_common_config)
 ;;; editor_common_config.el ends here
-

@@ -92,4 +92,8 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
+;; Change the formatter to brittany
+(setq haskell-stylish-on-save nil)
+;(setq haskell-mode-stylish-haskell-path "brittany-iohk")
+
 ;;; haskell_config.el ends here
