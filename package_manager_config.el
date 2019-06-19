@@ -47,6 +47,9 @@
 (use-package markdown-mode)
 (use-package mmm-mode)
 (use-package color-theme-sanityinc-tomorrow)
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
 
 ;;; package_manager_config.el ends here
-

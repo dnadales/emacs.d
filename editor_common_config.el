@@ -7,12 +7,14 @@
 ;;; Code:
 
 ;; Set a theme, if the default one is not desired.
-;;(load-theme 'sanityinc-tomorrow-night)
+;;(load-theme 'sanityinc-tomorrow-day)
+;;(load-theme 'sanityinc-tomorrow-bright)
+(load-theme 'sanityinc-tomorrow-night)
 ;;(load-theme 'tango-dark)
 ;;(load-theme 'wombat)
 ;;(load-theme 'adwaita)
 ;;(load-theme 'dichromacy)
-(load-theme 'whiteboard)
+;;(load-theme 'whiteboard)
 ;;(load-theme 'tango)
 ;;(load-theme 'leuven)
 ;;(invert-face 'default)
@@ -58,7 +60,7 @@
 ;;
 (cond
  ((string-equal system-type "gnu/linux")
-  (set-frame-font "Hack-8") ;; sudo apt-get install fonts-hack-ttf
+  (set-frame-font "Hack-10") ;; sudo apt-get install fonts-hack-ttf
   ;; Other nice fonts I've used in the past:
   ;; (set-frame-font "DejaVu Sans Mono-8")
   ;; (set-frame-font "Ubuntu Mono-10")
