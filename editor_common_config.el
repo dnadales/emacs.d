@@ -9,15 +9,17 @@
 ;; Set a theme, if the default one is not desired.
 ;;(load-theme 'sanityinc-tomorrow-day)
 ;;(load-theme 'sanityinc-tomorrow-bright)
-(load-theme 'sanityinc-tomorrow-night)
+;;(load-theme 'sanityinc-tomorrow-night)
 ;;(load-theme 'tango-dark)
 ;;(load-theme 'wombat)
-;;(load-theme 'adwaita)
+(load-theme 'adwaita)
 ;;(load-theme 'dichromacy)
 ;;(load-theme 'whiteboard)
 ;;(load-theme 'tango)
 ;;(load-theme 'leuven)
 ;;(invert-face 'default)
+;; (load-theme 'solarized-light t)
+;; (load-theme 'solarized-gruvbox-light)
 
 
 ;; auto close bracket insertion. New in emacs 24
@@ -60,12 +62,12 @@
 ;;
 (cond
  ((string-equal system-type "gnu/linux")
-  (set-frame-font "Hack-10") ;; sudo apt-get install fonts-hack-ttf
+  ;; (set-frame-font "Hack-12") ;; sudo apt-get install fonts-hack-ttf
   ;; Other nice fonts I've used in the past:
-  ;; (set-frame-font "DejaVu Sans Mono-8")
+  ;; (set-frame-font "DejaVu Sans Mono-12")
   ;; (set-frame-font "Ubuntu Mono-10")
-  ;; (set-frame-font "Fira Code-8") ;; sudo apt-get install fonts-firacode
-  ;; (set-frame-font "Inconsolata-10") ;; sudo apt-get install fonts-inconsolata
+  ;;(set-frame-font "Fira Code-10") ;; sudo apt-get install fonts-firacode
+  (set-frame-font "Inconsolata-16") ;; sudo apt-get install fonts-inconsolata
   )
 
  ((string-equal system-type "windows-nt")
@@ -90,7 +92,7 @@
 (add-to-list 'auto-mode-alist '("COMMIT_EDITMSG" . markdown-mode))
 
 ;; Enable flyckeck globally.
-(add-hook 'after-init-hook #'global-flycheck-mode)
+;;(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; Enable company mode globally.
 (add-hook 'after-init-hook 'global-company-mode)

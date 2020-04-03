@@ -51,5 +51,6 @@
   :ensure t
   :config
   (editorconfig-mode 1))
+(use-package pdf-tools)
 
 ;;; package_manager_config.el ends here

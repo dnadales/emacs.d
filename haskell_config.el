@@ -89,8 +89,8 @@
  '(haskell-process-suggest-hoogle-imports t))
 
 ;; Improved flycheck
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
+;; (eval-after-load 'flycheck
+;;   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
 ;; Change the formatter to brittany
 (setq haskell-stylish-on-save nil)
