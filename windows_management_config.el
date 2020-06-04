@@ -8,10 +8,10 @@
 (when (fboundp 'winner-mode)
   (winner-mode 1))
 
-(global-set-key (kbd "C-c j") 'windmove-left)
-(global-set-key (kbd "C-c l") 'windmove-right)
-(global-set-key (kbd "C-c i") 'windmove-up)
-(global-set-key (kbd "C-c k") 'windmove-down)
+(global-set-key (kbd "C-c n") 'windmove-left)
+(global-set-key (kbd "C-c i") 'windmove-right)
+(global-set-key (kbd "C-c u") 'windmove-up)
+(global-set-key (kbd "C-c e") 'windmove-down)
 
 ;; Install package ``buffer-move''
 (require 'buffer-move)

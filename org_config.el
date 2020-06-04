@@ -28,7 +28,7 @@
 ;; Capture templates
 (setq org-capture-templates
       '(("t" "New Task" entry (file+headline agenda-path "Inbox")
-         "* TODO %?\n  %T\n  %i\n  %a")
+         "* TODO %?\n  %U\n  %i\n")
         )
       )
 
@@ -61,7 +61,7 @@
 
 (defun damian/org-clock-out-if-not-done ()
   "Clock out when the task is marked as not done (WAITING or TODO) ."
-  (when 
+  (when
       (and
        (org-clock-is-active)
        (or (string= org-state "WAITING")
@@ -99,5 +99,16 @@
 
 ;; Do not use the emacs theme to highlight code in the generated html.
 (setq org-html-htmlize-output-type 'css)
+
+(setq org-agenda-custom-commands
+       `(;; match those tagged with :inbox:, are not scheduled, are not DONE.
+         ("u" "[u]nscheduled tasks" tags "-SCHEDULED={.+}/!+TODO|+STARTED|+WAITING"))
+       )
+
+;; Timegrid customization for the agenda view
+(setq org-agenda-time-grid
+      '((require-timed)
+        "----------------"
+        (800 1000 1200 1400 1600 1800 2000)))
 
 ;;; org_config.el ends here

@@ -10,9 +10,9 @@
 ;;(load-theme 'sanityinc-tomorrow-day)
 ;;(load-theme 'sanityinc-tomorrow-bright)
 ;;(load-theme 'sanityinc-tomorrow-night)
-;;(load-theme 'tango-dark)
+(load-theme 'tango-dark)
 ;;(load-theme 'wombat)
-(load-theme 'adwaita)
+;;(load-theme 'adwaita)
 ;;(load-theme 'dichromacy)
 ;;(load-theme 'whiteboard)
 ;;(load-theme 'tango)
@@ -65,7 +65,7 @@
   ;; (set-frame-font "Hack-12") ;; sudo apt-get install fonts-hack-ttf
   ;; Other nice fonts I've used in the past:
   ;; (set-frame-font "DejaVu Sans Mono-12")
-  ;; (set-frame-font "Ubuntu Mono-10")
+  ;;(set-frame-font "Ubuntu Mono-10")
   ;;(set-frame-font "Fira Code-10") ;; sudo apt-get install fonts-firacode
   (set-frame-font "Inconsolata-16") ;; sudo apt-get install fonts-inconsolata
   )
@@ -179,6 +179,9 @@ Version 2016-07-17"
 
 ;; Delete trailing whitespace on save, globally.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+(require 'unicode-fonts)
+(unicode-fonts-setup)
 
 (provide 'editor_common_config)
 ;;; editor_common_config.el ends here
