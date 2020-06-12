@@ -45,6 +45,7 @@
  '(haskell-tags-on-save t)
  '(js-indent-level 2)
  '(kill-ring-max 10000)
+ '(line-spacing 0.2)
  '(org-agenda-restore-windows-after-quit t)
  '(org-agenda-window-setup (quote current-window))
  '(org-export-backends (quote (ascii html icalendar latex md odt)))

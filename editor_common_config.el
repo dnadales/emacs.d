@@ -62,12 +62,13 @@
 ;;
 (cond
  ((string-equal system-type "gnu/linux")
-  ;; (set-frame-font "Hack-12") ;; sudo apt-get install fonts-hack-ttf
+  ;; (set-frame-font "Hack-18") ;; sudo apt-get install fonts-hack-ttf
   ;; Other nice fonts I've used in the past:
-  ;; (set-frame-font "DejaVu Sans Mono-12")
-  ;;(set-frame-font "Ubuntu Mono-10")
-  ;;(set-frame-font "Fira Code-10") ;; sudo apt-get install fonts-firacode
-  (set-frame-font "Inconsolata-16") ;; sudo apt-get install fonts-inconsolata
+  ;; (set-frame-font "DejaVu Sans Mono-16")
+  ;;(set-frame-font "Ubuntu Mono-18")
+  ;;(set-frame-font "Fira Code-16") ;; sudo apt-get install fonts-firacode
+  (set-frame-font "JetBrains Mono-14") ;; https://www.jetbrains.com/lp/mono/#how-to-install
+  ;; (set-frame-font "Inconsolata-16") ;; sudo apt-get install fonts-inconsolata
   )
 
  ((string-equal system-type "windows-nt")
