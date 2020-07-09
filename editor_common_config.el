@@ -10,7 +10,7 @@
 ;;(load-theme 'sanityinc-tomorrow-day)
 ;;(load-theme 'sanityinc-tomorrow-bright)
 ;;(load-theme 'sanityinc-tomorrow-night)
-(load-theme 'tango-dark)
+;;(load-theme 'tango-dark)
 ;;(load-theme 'wombat)
 ;;(load-theme 'adwaita)
 ;;(load-theme 'dichromacy)
@@ -19,6 +19,7 @@
 ;;(load-theme 'leuven)
 ;;(invert-face 'default)
 ;; (load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
 ;; (load-theme 'solarized-gruvbox-light)
 
 
@@ -183,6 +184,9 @@ Version 2016-07-17"
 
 (require 'unicode-fonts)
 (unicode-fonts-setup)
+
+;; Visually truncate long lines
+(set-default 'truncate-lines t)
 
 (provide 'editor_common_config)
 ;;; editor_common_config.el ends here
