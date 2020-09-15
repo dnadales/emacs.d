@@ -7,21 +7,23 @@
 ;;; Code:
 
 ;; Set a theme, if the default one is not desired.
-;;(load-theme 'sanityinc-tomorrow-day)
+;; (load-theme 'sanityinc-tomorrow-day)
 ;;(load-theme 'sanityinc-tomorrow-bright)
 ;;(load-theme 'sanityinc-tomorrow-night)
 ;;(load-theme 'tango-dark)
-;;(load-theme 'wombat)
-;;(load-theme 'adwaita)
-;;(load-theme 'dichromacy)
+;; (load-theme 'wombat)
+;; (load-theme 'espresso t)
+;; (load-theme 'adwaita)
+;; (load-theme 'dichromacy)
 ;;(load-theme 'whiteboard)
-;;(load-theme 'tango)
-;;(load-theme 'leuven)
+;; (load-theme 'tango)
+;; (load-theme 'leuven)
 ;;(invert-face 'default)
 ;; (load-theme 'solarized-light t)
-(load-theme 'solarized-dark t)
+;;(load-theme 'solarized-dark t)
 ;; (load-theme 'solarized-gruvbox-light)
-
+;; (load-theme 'flatui t)
+(load-theme 'alect-dark t)
 
 ;; auto close bracket insertion. New in emacs 24
 (electric-pair-mode 1)
