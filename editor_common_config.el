@@ -77,6 +77,28 @@
  ((string-equal system-type "windows-nt")
   (set-frame-font "Consolas-12")))
 
+(defun change-font-size (new-size)
+  "Change the font size to the given value"
+  (interactive "nNew font size: ")
+  (set-face-attribute 'default nil :height (* 10 new-size))
+  )
+
+(bind-key "C-x f" #'change-font-size)
+
+(defun my/check-monitor ()
+ (change-font-size
+   (if (<= (display-pixel-width) 1440) 11 14)))
+
+;; Todo, here we should call my/check-monitor, however display-pixel-width does
+;; not correctly reports the size op the display emacs is in. So it seems we're
+;; almost there. I only need an answer to:
+
+;; (add-hook 'focus-in-hook 'my/check-monitor)
+;; (add-hook 'window-size-change-functions 'my/log-frame-size)
+
+;; (defun my/log-frame-size (frame) message frame)
+
+
 ;; Backup settings
 (setq
    backup-by-copying t               ; don't clobber symlinks
