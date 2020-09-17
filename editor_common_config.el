@@ -85,19 +85,24 @@
 
 (bind-key "C-x f" #'change-font-size)
 
-(defun my/check-monitor ()
- (change-font-size
-   (if (<= (display-pixel-width) 1440) 11 14)))
-
-;; Todo, here we should call my/check-monitor, however display-pixel-width does
-;; not correctly reports the size op the display emacs is in. So it seems we're
-;; almost there. I only need an answer to:
-
-;; (add-hook 'focus-in-hook 'my/check-monitor)
-;; (add-hook 'window-size-change-functions 'my/log-frame-size)
-
 ;; (defun my/log-frame-size (frame) message frame)
 
+(defun my/adjust-font-size-based-on-display ()
+  (let ((display-width (nth 3 (assq 'geometry (frame-monitor-attributes))))
+        )
+    (change-font-size
+     (cond ((<= display-width 1920) 18) ;; HD
+           ((<= display-width 2560) 11) ;; UWHD
+           ((<= display-width 4096) 14) ;; 4K
+           )
+     )
+    )
+  )
+
+;; Other relevant hook might be 'focus-in-hook
+(add-hook 'window-size-change-functions (lambda (frame) (my/adjust-font-size-based-on-display)))
+(add-hook 'focus-in-hook 'my/adjust-font-size-based-on-display)
+;; (add-hook 'focus-out-hook 'my/adjust-font-size-based-on-display)
 
 ;; Backup settings
 (setq
