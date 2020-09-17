@@ -85,13 +85,11 @@
 
 (bind-key "C-x f" #'change-font-size)
 
-;; (defun my/log-frame-size (frame) message frame)
-
 (defun my/adjust-font-size-based-on-display ()
   (let ((display-width (nth 3 (assq 'geometry (frame-monitor-attributes))))
         )
     (change-font-size
-     (cond ((<= display-width 1920) 18) ;; HD
+     (cond ((<= display-width 1920) 12) ;; HD
            ((<= display-width 2560) 11) ;; UWHD
            ((<= display-width 4096) 14) ;; 4K
            )
@@ -99,10 +97,8 @@
     )
   )
 
-;; Other relevant hook might be 'focus-in-hook
 (add-hook 'window-size-change-functions (lambda (frame) (my/adjust-font-size-based-on-display)))
 (add-hook 'focus-in-hook 'my/adjust-font-size-based-on-display)
-;; (add-hook 'focus-out-hook 'my/adjust-font-size-based-on-display)
 
 ;; Backup settings
 (setq
