@@ -83,7 +83,6 @@
 ;; Load scala mode
 (org-babel-do-load-languages
  'org-babel-load-languages '(
-                             (scala . t)
                              (haskell . t)
                              )
  )

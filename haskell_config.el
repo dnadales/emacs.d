@@ -1,3 +1,4 @@
+
 ;;; haskell_config.el --- Configuration for haskell-mode.
 ;;;
 ;;; Author: Damian Nadales

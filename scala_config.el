@@ -5,8 +5,8 @@
 ;;;
 ;;; Code:
 
-(add-hook 'scala-mode-hook 'ensime-mode)
+;; (add-hook 'scala-mode-hook 'ensime-mode)
 
-(provide 'scala-config)
+;; (provide 'scala-config)
 
 ;;; scala_config.el ends here

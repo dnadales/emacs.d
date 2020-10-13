@@ -52,5 +52,11 @@
   :config
   (editorconfig-mode 1))
 (use-package pdf-tools)
+;; direnv mode setup
+(use-package direnv
+ :config
+ (direnv-mode))
+(use-package lsp-mode)
+(use-package lsp-ui)
 
 ;;; package_manager_config.el ends here
