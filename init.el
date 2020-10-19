@@ -56,7 +56,8 @@
  '(org-src-fontify-natively t)
  '(org-src-window-setup 'current-window)
  '(package-selected-packages
-   '(lsp-haskell lsp-mode emojify spacemacs-theme flatui-dark-theme flatui-theme espresso-theme idea-darkula-theme unicode-fonts speed-type magit editorconfig markdown-toc alect-themes distinguished-theme dracula-theme edit-indirect moe-theme mmm-mode auctex helm-xref elm-mode flycheck-demjsonlint json-mode vmd-mode company-nixos-options nix-buffer nix-sandbox helm-nixos-options nix-mode intero htmlize paredit flycheck-haskell markdown-mode+ protobuf-mode terraform-mode color-theme-solarized solarized-theme anti-zenburn-theme hc-zenburn-theme labburn-theme zenburn-theme hydra indent-tools groovy-mode docker dockerfile-mode cypher-mode ox-reveal yaml-mode flymd gh-md markdown-mode buffer-move use-package helm-projectile haskell-snippets haskell-mode flycheck ensime))
+   '(lsp-haskell lsp-mode spacemacs-theme flatui-dark-theme flatui-theme espresso-theme idea-darkula-theme speed-type magit editorconfig markdown-toc alect-themes distinguished-theme dracula-theme edit-indirect moe-theme mmm-mode auctex helm-xref elm-mode flycheck-demjsonlint json-mode vmd-mode company-nixos-options nix-buffer nix-sandbox helm-nixos-options nix-mode intero htmlize paredit flycheck-haskell markdown-mode+ protobuf-mode terraform-mode color-theme-solarized solarized-theme anti-zenburn-theme hc-zenburn-theme labburn-theme zenburn-theme hydra indent-tools groovy-mode docker dockerfile-mode cypher-mode ox-reveal yaml-mode flymd gh-md markdown-mode buffer-move use-package helm-projectile haskell-snippets haskell-mode flycheck ensime))
+ '(projectile-use-git-grep t)
  '(safe-local-variable-values
    '((haskell-mode-stylish-haskell-path . "stylish-haskell")
      (haskell-mode-stylish-haskell-path . "cls-stylish-haskell")

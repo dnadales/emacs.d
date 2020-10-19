@@ -207,9 +207,6 @@ Version 2016-07-17"
 ;; Delete trailing whitespace on save, globally.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-(require 'unicode-fonts)
-(unicode-fonts-setup)
-
 ;; Visually truncate long lines
 (set-default 'truncate-lines t)
 
