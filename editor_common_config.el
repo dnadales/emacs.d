@@ -10,7 +10,7 @@
 ;; (load-theme 'sanityinc-tomorrow-day)
 ;;(load-theme 'sanityinc-tomorrow-bright)
 ;;(load-theme 'sanityinc-tomorrow-night)
-;;(load-theme 'tango-dark)
+(load-theme 'tango-dark)
 ;; (load-theme 'wombat)
 ;; (load-theme 'espresso t)
 ;; (load-theme 'adwaita)
@@ -23,7 +23,7 @@
 ;;(load-theme 'solarized-dark t)
 ;; (load-theme 'solarized-gruvbox-light)
 ;; (load-theme 'flatui t)
-(load-theme 'alect-dark t)
+;; (load-theme 'alect-dark t)
 
 ;; auto close bracket insertion. New in emacs 24
 (electric-pair-mode 1)
@@ -130,11 +130,6 @@
 
 ;; Display the column number.
 (setq column-number-mode t)
-
-;; Use yasnippet when in programming mode.
-(require 'haskell-snippets)
-(yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 ;; Enable projectile globally.
 (projectile-global-mode)
