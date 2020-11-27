@@ -70,7 +70,7 @@
   ;; (set-frame-font "DejaVu Sans Mono-16")
   ;;(set-frame-font "Ubuntu Mono-18")
   ;;(set-frame-font "Fira Code-16") ;; sudo apt-get install fonts-firacode
-  (set-frame-font "JetBrains Mono-14") ;; https://www.jetbrains.com/lp/mono/#how-to-install
+  (set-frame-font "JetBrains Mono-15") ;; https://www.jetbrains.com/lp/mono/#how-to-install
   ;; (set-frame-font "Inconsolata-16") ;; sudo apt-get install fonts-inconsolata
   )
 
@@ -90,8 +90,8 @@
         )
     (change-font-size
      (cond ((<= display-width 1920) 12) ;; HD
-           ((<= display-width 2560) 11) ;; UWHD
-           ((<= display-width 4096) 14) ;; 4K
+           ((<= display-width 2560) 18) ;; UWHD
+           ((<= display-width 4096) 18) ;; 4K
            )
      )
     )

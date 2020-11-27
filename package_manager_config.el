@@ -58,13 +58,13 @@
  (direnv-mode))
 ;; We need direnv to execute before lsp starts. So we start lsp in deferred
 ;; mode when opening haskell files.
-(use-package lsp-mode
-  :hook (haskell-mode . lsp-deferred)
-  :diminish lsp-mode
-  :custom
-  (lsp-keymap-prefix "M-s-l")
-  :commands (lsp lsp-deferred))
-(use-package lsp-ui)
-(use-package lsp-haskell)
+;; (use-package lsp-mode
+;;   :hook (haskell-mode . lsp-deferred)
+;;   :diminish lsp-mode
+;;   :custom
+;;   (lsp-keymap-prefix "M-s-l")
+;;   :commands (lsp lsp-deferred))
+;; (use-package lsp-ui)
+;; (use-package lsp-haskell)
 
 ;;; package_manager_config.el ends here
