@@ -41,6 +41,8 @@
 (setq-default TeX-master nil) ; Query for master file.
 (setq TeX-parse-self t) ; Enable parse on load.
 (setq TeX-auto-save t) ; Enable parse on save.
+;; Suggest labels using reftex
+(setq reftex-plug-into-AUCTeX t)
 
 (pdf-tools-install)
 
