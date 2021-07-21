@@ -52,8 +52,11 @@
 (add-hook 'haskell-mode-hook 'haskell-decl-scan-mode)
 
 ;; Enable "which function mode".
-(eval-after-load "which-func"
-  '(add-to-list 'which-func-modes 'haskell-mode))
+;;
+;; This is disabled for now as it seemed to break Emacs.
+;;
+;; (eval-after-load "which-func"
+;;   '(add-to-list 'which-func-modes 'haskell-mode))
 
 ;; Enable speed-bar support.
 (require 'speedbar)
