@@ -8,22 +8,48 @@
 
 ;; Set a theme, if the default one is not desired.
 ;; (load-theme 'sanityinc-tomorrow-day)
-;;(load-theme 'sanityinc-tomorrow-bright)
-;;(load-theme 'sanityinc-tomorrow-night)
-(load-theme 'tango-dark)
+;; (load-theme 'sanityinc-tomorrow-bright)
+;; (load-theme 'sanityinc-tomorrow-night)
+;; (load-theme 'tango-dark)
 ;; (load-theme 'wombat)
 ;; (load-theme 'espresso t)
 ;; (load-theme 'adwaita)
 ;; (load-theme 'dichromacy)
-;;(load-theme 'whiteboard)
+;; (load-theme 'whiteboard)
 ;; (load-theme 'tango)
 ;; (load-theme 'leuven)
-;;(invert-face 'default)
+;; (invert-face 'default)
 ;; (load-theme 'solarized-light t)
-;;(load-theme 'solarized-dark t)
+;; (load-theme 'solarized-dark t)
 ;; (load-theme 'solarized-gruvbox-light)
 ;; (load-theme 'flatui t)
 ;; (load-theme 'alect-dark t)
+
+;;
+;; Solarized specific settings
+;;
+;; Note that these need to be set before load-theme is invoked for Solarized!!!
+;;
+;; Make the fringe stand out from the background
+(setq solarized-distinct-fringe-background t)
+;; Don't change the font for some headings and titles
+(setq solarized-use-variable-pitch nil)
+;; make the modeline high contrast
+(setq solarized-high-contrast-mode-line t)
+;; Use less bolding
+;; (setq solarized-use-less-bold t)
+;; Use more italics
+;; (setq solarized-use-more-italic t)
+;; Use less colors for indicators such as git:gutter, flycheck and similar
+;; (setq solarized-emphasize-indicators nil)
+;; Don't change size of org-mode headlines (but keep other size-changes)
+(setq solarized-scale-org-headlines nil)
+;; (load-theme 'solarized-light t)
+(load-theme 'solarized-dark t)
+
+
+
+
 
 ;; auto close bracket insertion. New in emacs 24
 (electric-pair-mode 1)
