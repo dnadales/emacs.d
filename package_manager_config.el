@@ -33,9 +33,7 @@
 (use-package ensime
   :commands ensime ensime-mode
   :pin melpa-stable)
-(use-package flycheck)
 (use-package haskell-mode)
-(use-package intero) ;; Too inmature to use right now (24/08/2017)
 (use-package projectile)
 (use-package haskell-snippets)
 (use-package helm-projectile)
@@ -54,8 +52,21 @@
 (use-package pdf-tools)
 ;; direnv mode setup
 (use-package direnv
- :config
- (direnv-mode))
+  :hook
+  (eshell-directory-change . direnv-update-directory-environment)
+  :config
+  (direnv-mode))
+(use-package flycheck
+  :custom
+  (flycheck-executable-find (lambda (cmd)
+			      (direnv-update-environment default-directory)
+			      (executable-find cmd)))
+  ;; :bind
+  ;; (("<f9>" . flycheck-next-error)
+  ;;  ("<f10>" . flycheck-previous-error))
+  :hook
+  (prog-mode . flycheck-mode))
+
 ;; We need direnv to execute before lsp starts. So we start lsp in deferred
 ;; mode when opening haskell files.
 ;; (use-package lsp-mode
