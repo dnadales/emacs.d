@@ -7,6 +7,12 @@
 ;;; Code:
 (require 'org)
 
+;; This package seems to be outdated and it does not seem to work:
+;; `org-store-link' will not add a git link when the cursor is at file version
+;; controlled by git.
+;;
+;; (require 'org-git-link)
+
 (setq org-directory "~/Dropbox/docs/org/")
 
 (setq agenda-path (concat org-directory "agenda.org"))
