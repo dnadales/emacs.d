@@ -118,4 +118,8 @@
         "----------------"
         (800 1000 1200 1400 1600 1800 2000)))
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((dot . t))) ; this line activates dot
+
 ;;; org_config.el ends here
