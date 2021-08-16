@@ -27,6 +27,8 @@
 ;; Global map to access the org-agenda commands.
 (define-key global-map "\C-ca" 'org-agenda)
 
+(define-key global-map "\C-cl" 'org-store-link)
+
 ;; This adds a ``CLOSED'' label to the TODO entry, which describes the
 ;; date and time in which the activity was marked as done.
 (setq org-log-done t)
