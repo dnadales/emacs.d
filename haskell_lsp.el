@@ -12,7 +12,7 @@
   (haskell-mode . lsp)
   :custom
   (company-minimum-prefix-length 1)
-  (company-idle-delay 0.0)
+  (company-idle-delay 1.0)
   (gc-cons-threshold 100000000)
   (read-process-output-max (* 1024 1024))
   :bind
