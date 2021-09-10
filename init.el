@@ -57,6 +57,8 @@
  '(org-agenda-window-setup 'current-window)
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-indirect-buffer-display 'current-window)
+ '(org-modules
+   '(ol-bbdb ol-bibtex ol-docview ol-eww ol-gnus org-habit ol-info ol-irc ol-mhe ol-rmail ol-w3m))
  '(org-src-fontify-natively t)
  '(org-src-window-setup 'current-window)
  '(package-selected-packages
