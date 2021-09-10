@@ -56,38 +56,6 @@
 (setq org-clock-into-drawer t)
 (org-clock-persistence-insinuate)
 
-;; The following hooks allow to clock in and out based on the state changes.
-;; Taken from: http://sachachua.com/blog/2007/12/a-day-in-a-life-with-org/
-
-(defun damian/org-clock-in-if-starting ()
-  "Clock in when the task is marked STARTED."
-  (when
-      (and (string= org-state "STARTED")
-           (not (string= org-last-state org-state)))
-    (org-clock-in)))
-
-(add-hook 'org-after-todo-state-change-hook
-	  'damian/org-clock-in-if-starting)
-
-(defadvice org-clock-in (after damian activate)
-  "Set this task's status to 'STARTED'."
-  (org-todo "STARTED"))
-
-(defun damian/org-clock-out-if-not-done ()
-  "Clock out when the task is marked as not done (WAITING or TODO) ."
-  (when
-      (and
-       (org-clock-is-active)
-       (or (string= org-state "WAITING")
-             (string= org-state "TODO"))
-       (not (string= org-last-state org-state)))
-    (message "Trying to clock out...")
-    (org-clock-out)
-    (message "Clock out done...")))
-
-(add-hook 'org-after-todo-state-change-hook
-	  'damian/org-clock-out-if-not-done)
-
 (setq org-agenda-skip-scheduled-if-done t
       org-enforce-todo-dependencies t
       org-hide-leading-stars t
