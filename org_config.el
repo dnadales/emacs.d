@@ -56,6 +56,16 @@
 (setq org-clock-into-drawer t)
 (org-clock-persistence-insinuate)
 
+;;
+;; Agenda view customizations
+;;
+(setq  org-agenda-prefix-format
+      '((agenda . "%?-12t%-11s")
+        (todo . " %i %-12:c")
+        (tags . " %i %-12:c")
+        (search . " %i %-12:c")))
+(setq org-agenda-todo-keyword-format "·")
+
 (setq org-agenda-skip-scheduled-if-done t
       org-enforce-todo-dependencies t
       org-hide-leading-stars t
