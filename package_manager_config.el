@@ -12,7 +12,7 @@
 (setq
  use-package-always-ensure t
  package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-		    ("melpa-stable" . "https://stable.melpa.org/packages/")
+;;		    ("melpa-stable" . "https://stable.melpa.org/packages/")
                     ("melpa" . "http://melpa.org/packages/"))
  )
 
@@ -30,9 +30,6 @@
 (require 'use-package)
 
 ;; Required packages
-(use-package ensime
-  :commands ensime ensime-mode
-  :pin melpa-stable)
 (use-package haskell-mode)
 (use-package projectile)
 (use-package haskell-snippets)

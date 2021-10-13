@@ -117,8 +117,8 @@
         )
     (change-font-size
      (cond ((<= display-width 1920) 12) ;; HD
-           ((<= display-width 2560) 12) ;; UWHD
-           ((<= display-width 4096) 11) ;; 4K
+           ((<= display-width 2560) 14) ;; UWHD
+           ((<= display-width 4096) 12) ;; 4K
            )
      )
     )

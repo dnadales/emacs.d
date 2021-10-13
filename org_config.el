@@ -17,6 +17,8 @@
 
 (setq inbox-path (concat org-directory "inbox.org"))
 (setq calendar-path (concat org-directory "calendar.org"))
+(setq projects-path (concat org-directory "projects.org"))
+(setq next-actions-path (concat org-directory "next-actions.org"))
 
 ;; Note that I use a list in case you want to add more agenda files.
 (setq org-agenda-files (list calendar-path))
@@ -77,12 +79,16 @@
  'org-babel-load-languages '((haskell . t)
                              (dot . t))
  )
-
+;;
 ;; Refile
-(setq org-refile-use-outline-path t)                  ; Show full paths for refiling
+;;
+(setq org-refile-use-outline-path 'file) ; Use the file path as of the refiling
+                                         ; targets. This makes it possible to
+                                         ; refile nodes to the top-level.
 (setq org-outline-path-complete-in-steps nil)
-(setq org-refile-targets (quote ((nil :maxlevel . 9)
-                                 (org-agenda-files :maxlevel . 9))))
+(setq org-refile-targets (quote ((projects-path :level . 1)
+                                 (next-actions-path :level . 1)
+                                 (calendar-path :level . 1))))
 
 ;; Do not use the emacs theme to highlight code in the generated html.
 (setq org-html-htmlize-output-type 'css)
