@@ -75,6 +75,7 @@
 ;; (use-package lsp-ui)
 ;; (use-package lsp-haskell)
 
+;; Remember to run: M-x all-the-icons-install-fonts
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
@@ -109,4 +110,5 @@
   ;; :diminish which-key-mode
   )
 
+(use-package org-roam)
 ;;; package_manager_config.el ends here

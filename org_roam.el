@@ -12,8 +12,8 @@
 (global-set-key (kbd "C-c r /") #'org-roam-node-find)
 
 ;; org-roam-ui configuration
-(add-to-list 'load-path "~/.emacs.d/elisp/org-roam-ui")
-(load-library "org-roam-ui")
+;; (add-to-list 'load-path "~/.emacs.d/elisp/org-roam-ui")
+;;(load-library "org-roam-ui")
 (require 'org-roam-protocol)
 
 ;; Deft provides an interface for browsing and filtering org-roam notes.
@@ -29,3 +29,6 @@
   (deft-use-filter-string-for-filename t)
   (deft-default-extension "org")
   (deft-directory org-roam-directory))
+
+;; We didn't need to migrate from version 1. We know what we're doing.
+(setq org-roam-v2-ack t)
