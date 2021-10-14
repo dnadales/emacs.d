@@ -49,9 +49,6 @@
 
 (load-theme 'doom-solarized-dark-high-contrast t)
 
-
-
-
 ;; auto close bracket insertion. New in emacs 24
 (electric-pair-mode 1)
 
@@ -208,8 +205,6 @@ Version 2016-07-17"
 ;; the editor running.
 (server-start)
 
-;; TorXakis mode. For now we put this configuration here, till this mode is published on melpa.
-(require 'torxakis-mode)
 (defun my-prog-mode-hook ()
   "My programming mode hook."
   (setq tab-width 4))
