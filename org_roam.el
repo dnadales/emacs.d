@@ -1,4 +1,3 @@
-(setq org-roam-v2-ack t)
 (require 'org-roam)
 (setq org-roam-directory (file-truename "~/psys/roam/"))
 
@@ -29,6 +28,3 @@
   (deft-use-filter-string-for-filename t)
   (deft-default-extension "org")
   (deft-directory org-roam-directory))
-
-;; We didn't need to migrate from version 1. We know what we're doing.
-(setq org-roam-v2-ack t)

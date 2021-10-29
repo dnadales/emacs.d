@@ -110,5 +110,22 @@
   ;; :diminish which-key-mode
   )
 
-(use-package org-roam)
+(use-package org-roam
+  :ensure t
+  :after org
+  :init
+  (setq org-roam-v2-ack t))
+
+(use-package magit
+  :ensure t)
+
+(use-package company
+  :ensure t
+  :defer t
+  :init (global-company-mode)
+  )
+
+(use-package git-link)
+(use-package git-timemachine)
+
 ;;; package_manager_config.el ends here

@@ -98,4 +98,16 @@
          ("u" "[u]nscheduled tasks" tags "-SCHEDULED={.+}/!+TODO|+STARTED|+WAITING"))
        )
 
+;; I tried org-wild-notifier and org-alert
+;; they both error with
+;;
+;; Error (use-package): Failed to install org-wild-notifier: http://melpa.org/packages/log4e-20200420.745.el: Not found
+;;
+
+(use-package org-notifications
+  :ensure t)
+(require 'org-notifications)
+(org-notifications-start)
+
+
 ;;; org_config.el ends here

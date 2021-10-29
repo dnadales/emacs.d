@@ -16,10 +16,10 @@
 ;; Install package ``buffer-move''
 (require 'buffer-move)
 
-(global-set-key (kbd "C-c M-j") 'buf-move-left)
-(global-set-key (kbd "C-c M-l") 'buf-move-right)
-(global-set-key (kbd "C-c M-i") 'buf-move-up)
-(global-set-key (kbd "C-c M-k") 'buf-move-down)
+(global-set-key (kbd "C-c M-n") 'buf-move-left)
+(global-set-key (kbd "C-c M-i") 'buf-move-right)
+(global-set-key (kbd "C-c M-u") 'buf-move-up)
+(global-set-key (kbd "C-c M-e") 'buf-move-down)
 
 
 ;; windows_management_config.el ends here
