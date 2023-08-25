@@ -14,4 +14,12 @@ elisp/*
 *backup*
 TAGS
 emojis
-/org-roam.db
+org-roam.db
+straight
+.lsp-session-v1
+eln-cache
+history
+projects
+tramp
+transient
+.org-id-locations

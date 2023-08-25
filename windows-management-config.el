@@ -1,4 +1,4 @@
-;;; windows_management_config.el
+;;; windows-management-config.el
 ;;; Author: Damian Nadales
 ;;;
 ;;; Commentary:
@@ -14,6 +14,7 @@
 (global-set-key (kbd "C-c e") 'windmove-down)
 
 ;; Install package ``buffer-move''
+(straight-use-package 'buffer-move)
 (require 'buffer-move)
 
 (global-set-key (kbd "C-c M-n") 'buf-move-left)
@@ -21,5 +22,4 @@
 (global-set-key (kbd "C-c M-u") 'buf-move-up)
 (global-set-key (kbd "C-c M-e") 'buf-move-down)
 
-
-;; windows_management_config.el ends here
+;; windows-management-config.el ends here
