@@ -11,6 +11,9 @@
 ;; Enable projectile globally.
 (projectile-global-mode)
 
+(straight-use-package 'git-gutter)
+(global-git-gutter-mode +1)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Browsing links at the remote repository
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
