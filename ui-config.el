@@ -51,13 +51,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq column-number-mode t)
 
-;; Doom modeline requeres nerd-icons https://github.com/rainstormstudio/nerd-icons.el
-(straight-use-package 'nerd-icons)
-;; run M-x nerd-icons-install-fonts
-(straight-use-package 'doom-modeline)
-(doom-modeline-mode 1)
-;; See https://github.com/seagle0128/doom-modeline for additional customization
-(setq doom-modeline-buffer-file-name-style 'buffer-name)
-(setq doom-modeline-buffer-encoding nil)
+;; Moody
+(straight-use-package 'moody)
+(setq x-underline-at-descent-line t)
+(moody-replace-mode-line-buffer-identification)
+(moody-replace-vc-mode)
+(moody-replace-eldoc-minibuffer-message-function)
+
+;; Minions: minimize the minor modes shown in the modeline.
+(straight-use-package 'minions)
+(minions-mode 1)
 
 ;;; ui-config.el ends here
