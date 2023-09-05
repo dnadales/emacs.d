@@ -89,7 +89,7 @@
 	("WAITING" . "orange")
 	("STARTED" . "yellow")
 	("DONE" . (:foreground "green4" :weight bold))
-        ("CANCELED" . (:foreground "blue" :weight bold))))
+        ("CANCELED" . (:foreground "brown" :weight bold))))
 
 (custom-set-faces
  '(org-headline-done
