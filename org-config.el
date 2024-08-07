@@ -86,7 +86,7 @@
 		  "CANCELED(c@/!)")))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . org-warning)
+      '(("TODO" . "red")
 	("WAITING" . "orange")
 	("STARTED" . "yellow")
 	("DONE" . (:foreground "green4" :weight bold))
@@ -96,7 +96,7 @@
  '(org-headline-done
    ((((class color)
       (min-colors 16)
-      (background dark))
+      (background light))
      (:strike-through nil :foreground "rosy brown")))))
 
 ;; This adds a ``CLOSED'' label to the TODO entry, which describes the
