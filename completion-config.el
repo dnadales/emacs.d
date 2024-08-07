@@ -11,6 +11,8 @@
 (savehist-mode)
 
 (recentf-mode 1)
+(setq recentf-max-menu-items 1000000)
+(setq recentf-max-saved-items 1000000)
 
 ;; See https://github.com/minad/consult#use-package-example
 (use-package consult
