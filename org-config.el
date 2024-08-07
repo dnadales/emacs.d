@@ -135,9 +135,10 @@
                                          ; refile nodes to the top-level.
 (setq org-reverse-note-order t) ; Refile at the top of the file or node.
 (setq org-outline-path-complete-in-steps nil)
-(setq org-refile-targets (quote ((projects-path :level . 1)
-                                 (next-actions-path :level . 1)
-                                 (calendar-path :level . 1))))
+(setq org-refile-targets (quote ((projects-path      :level . 1)
+                                 (next-actions-path  :level . 1)
+                                 (calendar-path      :level . 1)
+				 (maybe-someday-path :level . 1))))
 
 
 ;;; org-config.el ends here
