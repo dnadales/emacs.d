@@ -20,7 +20,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme setting
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(load-theme 'modus-vivendi)
+(straight-use-package 'dracula-theme)
+(load-theme 'dracula t)
+
+;; (straight-use-package 'solarized-theme)
+;; (load-theme 'solarized-light t)
+
+; (load-theme 'modus-operandi)
+
 ;; Disable underline in language notes. This affects lsp rendering.
 ;;
 ;; I found this setting by running:
@@ -32,7 +39,7 @@
 			`(modus-themes-lang-warning ((t (:underline nil))) t))
 
 ;; https://www.jetbrains.com/lp/mono/#how-to-install
-(set-frame-font "JetBrains Mono-15")
+;;(set-frame-font "JetBrains Mono-12")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Pulsar configuration
