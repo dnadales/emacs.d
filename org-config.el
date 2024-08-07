@@ -45,15 +45,15 @@
 (setq org-hide-leading-stars t)
 (setq org-odd-levels-only t)
 
-;; Headings appearance
-(custom-theme-set-faces 'user
-                        `(org-level-1 ((t (:foreground "dark turquoise"
-					   :height     1.0))))
-			`(org-level-2 ((t (:foreground "pale turquoise"))))
-			`(org-level-3 ((t (:foreground "lemon chiffon"))))
-			`(org-level-4 ((t (:foreground "white smoke"))))
-			`(org-level-5 ((t (:foreground "white smoke"))))
-			`(org-level-6 ((t (:foreground "white smoke")))))
+;; Headings appearance (uncomment and edit if the current theme does not look good with the default org-mode colors)
+;; (custom-theme-set-faces 'user
+;;                         `(org-level-1 ((t (:foreground "dark turquoise"
+;; 					   :height     1.0))))
+;; 			`(org-level-2 ((t (:foreground "pale turquoise"))))
+;; 			`(org-level-3 ((t (:foreground "lemon chiffon"))))
+;; 			`(org-level-4 ((t (:foreground "white smoke"))))
+;; 			`(org-level-5 ((t (:foreground "white smoke"))))
+;; 			`(org-level-6 ((t (:foreground "white smoke")))))
 
 ;; Org bullets
 (straight-use-package 'org-bullets)
