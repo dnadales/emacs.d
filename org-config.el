@@ -13,6 +13,7 @@
 (setq calendar-path (concat org-directory "calendar.org"))
 (setq projects-path (concat org-directory "projects.org"))
 (setq next-actions-path (concat org-directory "next-actions.org"))
+(setq maybe-someday-path (concat org-directory "maybe-someday.org"))
 
 ;; NOTE: use a list in case I want to add more agenda files.
 (setq org-agenda-files (list calendar-path))
