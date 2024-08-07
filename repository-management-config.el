@@ -26,4 +26,8 @@
   :bind (("C-x p y" . browse-at-remote))
  )
 
+(use-package magit-delta
+  :straight t
+  :hook (magit-mode . magit-delta-mode))
+
 ;; repository-management-config.el ends here
