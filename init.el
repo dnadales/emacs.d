@@ -26,6 +26,16 @@
 (straight-use-package 'use-package)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Set paths to executables
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-to-list 'exec-path "/home/damian/gems/bin")
+(add-to-list 'exec-path "/home/damian/.cabal/bin")
+(add-to-list 'exec-path "/home/damian/.ghcup/bin")
+(add-to-list 'exec-path "/home/damian/.nix-profile/bin")
+(add-to-list 'exec-path "/home/damian/.local/bin")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Module loading
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
