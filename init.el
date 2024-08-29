@@ -44,6 +44,9 @@
   :straight t
   :config (envrc-global-mode))
 
+;; We might need this package in multiple modes, so we install it here.
+(straight-use-package 'visual-fill-column)
+
 (load "~/.emacs.d/ui-config.el")
 (load "~/.emacs.d/files-config.el")
 (load "~/.emacs.d/completion-config.el")
@@ -53,6 +56,7 @@
 (load "~/.emacs.d/org-config.el")
 (load "~/.emacs.d/roam-config.el")
 (load "~/.emacs.d/haskell-config.el")
+(load "~/.emacs.d/markdown-config.el")
 
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a
