@@ -1,5 +1,4 @@
 ;;; haskell-config.el --- Configuration for Haskell support
-;;; server protocol.
 ;;;
 ;;; Author: Damian Nadales
 ;;;
