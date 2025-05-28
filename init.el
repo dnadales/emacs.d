@@ -56,6 +56,7 @@
 (load "~/.emacs.d/org-config.el")
 (load "~/.emacs.d/roam-config.el")
 (load "~/.emacs.d/haskell-config.el")
+(load "~/.emacs.d/rust-config.el")
 (load "~/.emacs.d/markdown-config.el")
 
 ;; Server:
