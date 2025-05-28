@@ -59,6 +59,11 @@
 (load "~/.emacs.d/rust-config.el")
 (load "~/.emacs.d/markdown-config.el")
 
+;; Additional editor configurations
+(setq sentence-end-double-space nil) ;; Sentences end with a period. Period.
+
+(global-set-key (kbd "C-<backspace>") 'backward-kill-word)
+
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a
 ;; server). This is quite useful for having only a single instance of
