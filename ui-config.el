@@ -20,8 +20,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Theme setting
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(straight-use-package 'dracula-theme)
-(load-theme 'dracula t)
+;; (straight-use-package 'dracula-theme)
+;; (load-theme 'dracula t)
+(load-theme 'modus-operandi t)
 
 ;; (straight-use-package 'solarized-theme)
 ;; (load-theme 'solarized-light t)
