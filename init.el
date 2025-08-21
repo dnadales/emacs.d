@@ -40,9 +40,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; We want to load envrc before any other package, therefore we place it in the init file.
-(use-package envrc
-  :straight t
-  :config (envrc-global-mode))
+;; (use-package envrc
+;;   :straight t
+;;   :config (envrc-global-mode))
 
 ;; We might need this package in multiple modes, so we install it here.
 (straight-use-package 'visual-fill-column)
@@ -58,11 +58,16 @@
 (load "~/.emacs.d/haskell-config.el")
 (load "~/.emacs.d/rust-config.el")
 (load "~/.emacs.d/markdown-config.el")
+(load "~/.emacs.d/my-utility-functions.el")
 
 ;; Additional editor configurations
 (setq sentence-end-double-space nil) ;; Sentences end with a period. Period.
 
 (global-set-key (kbd "C-<backspace>") 'backward-kill-word)
+
+;; Tabs are evil
+(setq-default tab-width 4)
+(setq-default indent-tabs-mode nil)
 
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a
