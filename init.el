@@ -58,7 +58,8 @@
 (load "~/.emacs.d/haskell-config.el")
 (load "~/.emacs.d/rust-config.el")
 (load "~/.emacs.d/markdown-config.el")
-(load "~/.emacs.d/my-utility-functions.el")
+(load "~/.emacs.d/quint-config.el")
+;;(load "~/.emacs.d/my-utility-functions.el")
 
 ;; Additional editor configurations
 (setq sentence-end-double-space nil) ;; Sentences end with a period. Period.
