@@ -40,7 +40,7 @@
 			`(modus-themes-lang-warning ((t (:underline nil))) t))
 
 ;; https://www.jetbrains.com/lp/mono/#how-to-install
-;;(set-frame-font "JetBrains Mono-12")
+(set-frame-font "JetBrains Mono-12")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Pulsar configuration
