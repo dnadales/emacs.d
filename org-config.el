@@ -18,6 +18,8 @@
 ;; NOTE: use a list in case I want to add more agenda files.
 (setq org-agenda-files (list calendar-path))
 
+(setq notes-path (concat org-directory "notes/notes.org"))
+
 (setq org-default-notes-file calendar-path)
 
 ;;
@@ -29,6 +31,8 @@
 (setq org-capture-templates
       '(("t" "New Task" entry (file inbox-path)
          "* TODO %?\n  %U\n  %i\n")
+        ("n" "Note" entry (file notes-path)
+         "* %? %^g\n  %<%Y-%m-%d %a %H:%M:%S>\n  %i\n")
         )
       )
 
