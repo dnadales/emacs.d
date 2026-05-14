@@ -18,4 +18,9 @@
   :config
   (envrc-global-mode))
 
+;; Semantic selection expansion: repeated C-= widens the selection
+;; from word -> sentence -> paragraph -> function body, etc.
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+
 ;;; programming-config.el ends here
