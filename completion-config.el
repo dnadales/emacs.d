@@ -86,6 +86,9 @@
   :after (embark consult)
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
+;; Editable grep buffers: consult-ripgrep -> embark-export -> wgrep -> save
+(use-package wgrep)
+
 ;; which-key is built-in since Emacs 30.
 (which-key-mode)
 
