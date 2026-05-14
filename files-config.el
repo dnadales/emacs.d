@@ -22,4 +22,15 @@
 ;; Delete trailing whitespace on save, globally.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(defun copy-buffer-file-path ()
+  "Copy the absolute path of the current buffer's file to the kill ring."
+  (interactive)
+  (if buffer-file-name
+      (progn
+        (kill-new buffer-file-name)
+        (message "Copied: %s" buffer-file-name))
+    (message "Buffer is not visiting a file")))
+
+(global-set-key (kbd "C-c f p") #'copy-buffer-file-path)
+
 ;; files-config.el ends here
