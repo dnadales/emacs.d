@@ -89,6 +89,22 @@
 ;; Editable grep buffers: consult-ripgrep -> embark-export -> wgrep -> save
 (use-package wgrep)
 
+;; In-buffer completion popup using the native completion-at-point system.
+;; Replaces company-mode; uses the same orderless filtering as vertico.
+(use-package corfu
+  :custom
+  (corfu-auto t)
+  (corfu-auto-delay 0.1)
+  (corfu-auto-prefix 1)
+  :init
+  (global-corfu-mode))
+
+;; Extra completion-at-point backends (file paths, dabbrev).
+(use-package cape
+  :init
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-dabbrev))
+
 ;; which-key is built-in since Emacs 30.
 (which-key-mode)
 

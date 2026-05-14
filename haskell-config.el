@@ -27,12 +27,6 @@
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
-(use-package company
-  :hook (after-init . global-company-mode)
-  :config
-  (setq company-idle-delay 0.1
-        company-minimum-prefix-length 1))
-
 (use-package lsp-haskell
   :after lsp-mode
   :custom
