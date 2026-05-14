@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; markdown-config.el --- Configuration for Markdown support
 ;;;
 ;;; Author: Damian Nadales
@@ -10,7 +11,6 @@
   (setq markdown-fontify-code-blocks-natively t)
   (add-to-list 'markdown-code-lang-modes '("quint" . quint-mode)))
 
-(add-hook 'markdown-mode-hook 'visual-fill-column-mode)
 (add-hook 'markdown-mode-hook 'markdown-toggle-markup-hiding)
 (add-hook 'markdown-mode-hook 'visual-line-mode)
 

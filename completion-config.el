@@ -4,19 +4,18 @@
 ;;;
 ;;; Code:
 
-(straight-use-package 'vertico)
-(vertico-mode)
+(use-package vertico
+  :config
+  (vertico-mode))
 
-(straight-use-package 'savehist)
 (savehist-mode)
 
 (recentf-mode 1)
-(setq recentf-max-menu-items 1000000)
-(setq recentf-max-saved-items 1000000)
+(setq recentf-max-menu-items 100000)
+(setq recentf-max-saved-items 100000)
 
 ;; See https://github.com/minad/consult#use-package-example
 (use-package consult
-  :straight t
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-x bindings in `ctl-x-map'
          ("C-x b"   . consult-buffer)              ;; orig. switch-to-buffer
@@ -52,23 +51,15 @@
 
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref)
-
-  ;; Configure other variables and modes in the :config section,
-  ;; after lazily loading the package.
-  :config
-  )
+        xref-show-definitions-function #'consult-xref))
 
 (use-package orderless
-  :straight t
-  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles basic partial-completion)))))
 
 ;; Enable rich annotations using the Marginalia package
 (use-package marginalia
-  :straight t
   ;; Bind `marginalia-cycle' locally in the minibuffer.  To make the binding
   ;; available in the *Completions* buffer, add it to the
   ;; `completion-list-mode-map'.
@@ -83,9 +74,7 @@
   ;; package.
   (marginalia-mode))
 
-(use-package which-key
-    :straight t
-    :config
-    (which-key-mode))
+;; which-key is built-in since Emacs 30.
+(which-key-mode)
 
 ;;; completion-config.el ends here

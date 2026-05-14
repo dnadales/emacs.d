@@ -1,26 +1,24 @@
+;;; -*- lexical-binding: t; -*-
 ;;; org-config.el
 ;;; Author: Damian Nadales
 ;;;
 ;;; Commentary:
 ;;;
 ;;; Code:
-(straight-use-package 'org)
-(require 'org)
 
 (setq org-directory "~/psys/")
 
-(setq inbox-path (concat org-directory "inbox.org"))
-(setq calendar-path (concat org-directory "calendar.org"))
-(setq projects-path (concat org-directory "projects.org"))
-(setq next-actions-path (concat org-directory "next-actions.org"))
-(setq maybe-someday-path (concat org-directory "maybe-someday.org"))
+(defvar my/inbox-path (concat org-directory "inbox.org"))
+(defvar my/calendar-path (concat org-directory "calendar.org"))
+(defvar my/projects-path (concat org-directory "projects.org"))
+(defvar my/next-actions-path (concat org-directory "next-actions.org"))
+(defvar my/maybe-someday-path (concat org-directory "maybe-someday.org"))
+(defvar my/notes-path (concat org-directory "notes/notes.org"))
 
 ;; NOTE: use a list in case I want to add more agenda files.
-(setq org-agenda-files (list calendar-path))
+(setq org-agenda-files (list my/calendar-path))
 
-(setq notes-path (concat org-directory "notes/notes.org"))
-
-(setq org-default-notes-file calendar-path)
+(setq org-default-notes-file my/calendar-path)
 
 ;;
 ;; Org capture configuration
@@ -29,12 +27,10 @@
 
 ;; Capture templates
 (setq org-capture-templates
-      '(("t" "New Task" entry (file inbox-path)
+      '(("t" "New Task" entry (file my/inbox-path)
          "* TODO %?\n  %U\n  %i\n")
-        ("n" "Note" entry (file notes-path)
-         "* %? %^g\n  %<%Y-%m-%d %a %H:%M:%S>\n  %i\n")
-        )
-      )
+        ("n" "Note" entry (file my/notes-path)
+         "* %? %^g\n  %<%Y-%m-%d %a %H:%M:%S>\n  %i\n")))
 
 ;;
 ;; Link management
@@ -49,19 +45,9 @@
 (setq org-hide-leading-stars t)
 (setq org-odd-levels-only t)
 
-;; Headings appearance (uncomment and edit if the current theme does not look good with the default org-mode colors)
-;; (custom-theme-set-faces 'user
-;;                         `(org-level-1 ((t (:foreground "dark turquoise"
-;; 					   :height     1.0))))
-;; 			`(org-level-2 ((t (:foreground "pale turquoise"))))
-;; 			`(org-level-3 ((t (:foreground "lemon chiffon"))))
-;; 			`(org-level-4 ((t (:foreground "white smoke"))))
-;; 			`(org-level-5 ((t (:foreground "white smoke"))))
-;; 			`(org-level-6 ((t (:foreground "white smoke")))))
-
-;; Org bullets
-(straight-use-package 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+;; Org superstar (maintained successor to org-bullets)
+(use-package org-superstar
+  :hook (org-mode . org-superstar-mode))
 
 ;; Make text lines that are not headlines prefixed with virtual spaces
 ;; to vertically align with the headline text.
@@ -96,13 +82,6 @@
 	("DONE" . (:foreground "green4" :weight bold))
         ("CANCELED" . (:foreground "brown" :weight bold))))
 
-(custom-set-faces
- '(org-headline-done
-   ((((class color)
-      (min-colors 16)
-      (background light))
-     (:strike-through nil :foreground "rosy brown")))))
-
 ;; This adds a ``CLOSED'' label to the TODO entry, which describes the
 ;; date and time in which the activity was marked as done.
 (setq org-log-done t)
@@ -127,8 +106,7 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages '((haskell . t)
-                             (dot . t))
- )
+                             (dot . t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Refile settings
@@ -139,10 +117,10 @@
                                          ; refile nodes to the top-level.
 (setq org-reverse-note-order t) ; Refile at the top of the file or node.
 (setq org-outline-path-complete-in-steps nil)
-(setq org-refile-targets (quote ((projects-path      :level . 1)
-                                 (next-actions-path  :level . 1)
-                                 (calendar-path      :level . 1)
-				 (maybe-someday-path :level . 1))))
+(setq org-refile-targets (quote ((my/projects-path      :level . 1)
+                                 (my/next-actions-path  :level . 1)
+                                 (my/calendar-path      :level . 1)
+				 (my/maybe-someday-path :level . 1))))
 
 
 ;;; org-config.el ends here

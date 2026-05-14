@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; files-config.el
 ;;; Author: Damian Nadales
 ;;;
@@ -33,4 +34,4 @@
 
 (global-set-key (kbd "C-c f p") #'copy-buffer-file-path)
 
-;; files-config.el ends here
+;;; files-config.el ends here

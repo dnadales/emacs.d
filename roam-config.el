@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; roam-config.el
 ;;; Author: Damian Nadales
 ;;;
@@ -6,13 +7,9 @@
 ;;; Code:
 
 (use-package org-roam
-  :straight t
-  :ensure t
-  )
-
-(setq org-roam-directory (file-truename "~/psys/roam/"))
-(org-roam-setup)
-(org-roam-db-autosync-mode)
+  :config
+  (setq org-roam-directory (file-truename "~/psys/roam/"))
+  (org-roam-db-autosync-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Global key bindings
@@ -31,14 +28,10 @@
   :straight
     (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
     :after org-roam
-;;         normally we'd recommend hooking orui after org-roam, but since org-roam does not have
-;;         a hookable mode anymore, you're advised to pick something yourself
-;;         if you don't care about startup time, use
-;;  :hook (after-init . org-roam-ui-mode)
     :config
     (setq org-roam-ui-sync-theme t
           org-roam-ui-follow t
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
-;;; roam-config.el
+;;; roam-config.el ends here

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; windows-management-config.el
 ;;; Author: Damian Nadales
 ;;;
@@ -13,13 +14,10 @@
 (global-set-key (kbd "C-c u") 'windmove-up)
 (global-set-key (kbd "C-c e") 'windmove-down)
 
-;; Install package ``buffer-move''
-(straight-use-package 'buffer-move)
-(require 'buffer-move)
+(use-package buffer-move
+  :bind (("C-c M-n" . buf-move-left)
+         ("C-c M-i" . buf-move-right)
+         ("C-c M-u" . buf-move-up)
+         ("C-c M-e" . buf-move-down)))
 
-(global-set-key (kbd "C-c M-n") 'buf-move-left)
-(global-set-key (kbd "C-c M-i") 'buf-move-right)
-(global-set-key (kbd "C-c M-u") 'buf-move-up)
-(global-set-key (kbd "C-c M-e") 'buf-move-down)
-
-;; windows-management-config.el ends here
+;;; windows-management-config.el ends here
