@@ -68,6 +68,12 @@
 (setq-default tab-width 4)
 (setq-default indent-tabs-mode nil)
 
+;; Built-in quality-of-life modes
+(global-auto-revert-mode 1)      ; refresh buffers when files change on disk
+(save-place-mode 1)              ; remember cursor position per file
+(electric-pair-mode 1)           ; auto-close parens, brackets, quotes
+(pixel-scroll-precision-mode 1)  ; smooth scrolling (pgtk)
+
 ;; Server:
 ;; Use emacs as a server. See manual section 31.3 (Using emacs as a
 ;; server). This is quite useful for having only a single instance of
