@@ -20,4 +20,9 @@
          ("C-c M-u" . buf-move-up)
          ("C-c M-e" . buf-move-down)))
 
+;; Jump to any visible text in 2-3 keystrokes.
+(use-package avy
+  :bind (("C-c j" . avy-goto-char-timer)
+         ("M-g w" . avy-goto-word-1)))
+
 ;;; windows-management-config.el ends here
