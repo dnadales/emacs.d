@@ -8,10 +8,6 @@
 
 (use-package magit)
 
-(use-package projectile
-  :config
-  (projectile-global-mode))
-
 (use-package git-gutter
   :config
   (global-git-gutter-mode +1))
