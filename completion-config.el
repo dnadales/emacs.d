@@ -74,6 +74,18 @@
   ;; package.
   (marginalia-mode))
 
+;; Contextual actions on minibuffer candidates and at-point targets.
+;; Completes the vertico/consult/marginalia/orderless stack.
+(use-package embark
+  :bind (("C-." . embark-act)
+         ("C-;" . embark-dwim))
+  :config
+  (setq prefix-help-command #'embark-prefix-help-command))
+
+(use-package embark-consult
+  :after (embark consult)
+  :hook (embark-collect-mode . consult-preview-at-point-mode))
+
 ;; which-key is built-in since Emacs 30.
 (which-key-mode)
 
