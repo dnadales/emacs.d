@@ -31,7 +31,7 @@
 ;; Set paths to executables
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(dolist (path '("gems/bin" ".cabal/bin" ".ghcup/bin" ".nix-profile/bin" ".local/bin"))
+(dolist (path '("gems/bin" ".cabal/bin" ".nix-profile/bin" ".local/bin"))
   (add-to-list 'exec-path (expand-file-name path "~")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
