@@ -35,4 +35,6 @@
 
 (add-hook 'haskell-literate-mode-hook #'lsp)
 
+(put 'haskell-stylish-on-save 'safe-local-variable #'booleanp)
+
 ;;; haskell-config.el ends here

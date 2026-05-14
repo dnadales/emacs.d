@@ -20,6 +20,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (load-theme 'modus-operandi t)
 
+;; Tone down flyspell/lang underlines in modus-operandi
+(custom-set-faces
+ '(modus-themes-lang-note ((t (:underline nil))))
+ '(modus-themes-lang-warning ((t (:underline nil))))
+ '(org-headline-done ((((class color) (min-colors 16) (background light))
+                       (:strike-through nil :foreground "rosy brown")))))
+
 ;; https://www.jetbrains.com/lp/mono/#how-to-install
 (set-frame-font "JetBrains Mono-12")
 

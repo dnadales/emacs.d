@@ -7,6 +7,7 @@
 ;;; Code:
 
 (setq org-directory "~/psys/")
+(setq org-export-backends '(ascii html icalendar latex md odt))
 
 (defvar my/inbox-path (concat org-directory "inbox.org"))
 (defvar my/calendar-path (concat org-directory "calendar.org"))

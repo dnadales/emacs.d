@@ -38,9 +38,11 @@
 ;; Custom file
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(when (file-exists-p custom-file)
-  (load custom-file))
+;; Send customize writes to /dev/null so custom.el doesn't accumulate
+;; stray settings. All configuration lives explicitly in config files.
+(setq custom-file (expand-file-name "/dev/null"))
+
+(setq confirm-kill-emacs 'yes-or-no-p)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Module loading
@@ -58,6 +60,7 @@
 (load (expand-file-name "rust-config.el" user-emacs-directory))
 (load (expand-file-name "markdown-config.el" user-emacs-directory))
 (load (expand-file-name "quint-config.el" user-emacs-directory))
+(load (expand-file-name "javascript-config.el" user-emacs-directory))
 
 ;; Additional editor configurations
 (setq sentence-end-double-space nil) ;; Sentences end with a period. Period.
