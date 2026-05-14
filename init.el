@@ -53,6 +53,7 @@
 (load (expand-file-name "completion-config.el" user-emacs-directory))
 (load (expand-file-name "windows-management-config.el" user-emacs-directory))
 (load (expand-file-name "repository-management-config.el" user-emacs-directory))
+(load (expand-file-name "writing-config.el" user-emacs-directory))
 (load (expand-file-name "programming-config.el" user-emacs-directory))
 (load (expand-file-name "org-config.el" user-emacs-directory))
 (load (expand-file-name "roam-config.el" user-emacs-directory))
