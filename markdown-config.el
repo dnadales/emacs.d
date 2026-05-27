@@ -9,6 +9,7 @@
 
 (with-eval-after-load 'markdown-mode
   (setq markdown-fontify-code-blocks-natively t)
+  (setq markdown-command "pandoc -f gfm -t html")
   (add-to-list 'markdown-code-lang-modes '("quint" . quint-mode)))
 
 (add-hook 'markdown-mode-hook 'markdown-toggle-markup-hiding)
