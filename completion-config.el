@@ -94,7 +94,7 @@
 (use-package corfu
   :custom
   (corfu-auto t)
-  (corfu-auto-delay 0.1)
+  (corfu-auto-delay 1)
   (corfu-auto-prefix 1)
   :init
   (global-corfu-mode))
