@@ -20,7 +20,7 @@
   "Directory of atomic personal notes, one file per note. Encrypted via git-crypt.")
 
 ;; NOTE: use a list in case I want to add more agenda files.
-(setq org-agenda-files (list my/calendar-path))
+(setq org-agenda-files (list my/calendar-path my/next-actions-path))
 
 (setq org-default-notes-file my/calendar-path)
 
@@ -167,6 +167,119 @@ plain timestamp name. Runs from `org-capture-after-finalize-hook'."
 ;; Global map to access the org-agenda commands.
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-agenda-skip-scheduled-if-done t)
+
+;; Two agenda views split by tag. Work items carry :work: (calendar.org work
+;; habits + next-actions.org via #+FILETAGS), household items carry :home:.
+;; Each view = a tag-filtered timeline + a list of open tagged TODOs, so
+;; unscheduled work tasks still appear.
+;;
+;; The tag-filter-preset must sit at the command level (the 4th element), not on
+;; the agenda block: a composite command prepares and finalizes the buffer once,
+;; and only the command-level preset reaches that single filter pass. The
+;; tags-todo blocks filter via their own match string, so the command-level
+;; preset is redundant for them but harmless (their entries already match).
+(setq org-agenda-custom-commands
+      '(("w" "Work agenda"
+         ((agenda "")
+          (tags-todo "+work" ((org-agenda-overriding-header "Open work tasks"))))
+         ((org-agenda-tag-filter-preset '("+work"))))
+        ("h" "Home agenda"
+         ((agenda "")
+          (tags-todo "+home" ((org-agenda-overriding-header "Open home tasks"))))
+         ((org-agenda-tag-filter-preset '("+home"))))))
+
+;; Habit consistency graph. For every :STYLE: habit entry the agenda draws a
+;; strip showing the last weeks: a filled glyph for days the habit was done on
+;; time, empty for missed. Require org-habit directly (it pulls in org and turns
+;; on the graph). Don't touch `org-modules' here: this file runs before org is
+;; loaded, so that variable is still void and `add-to-list' on it would error.
+;; Tuning knobs: org-habit-graph-column (where the graph starts, default 40),
+;; org-habit-preceding-days / org-habit-following-days (window width),
+;; org-habit-show-habits-only-for-today (default t: in the weekly view show each
+;; habit once, on today, instead of repeating it every day).
+(require 'org-habit)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Habit / recurring-task adherence report
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; `my/habit-report' (C-c h) reads the DONE entries logged in each recurring
+;; item's LOGBOOK and reports, per item, how many of the last N periods you
+;; actually did it. N and the period length come from the item's own repeater:
+;; a .+1d habit is scored over the last 30 days, a ++1w task over 12 weeks, a
+;; .+1m chore over 12 months. This is the tracker for weekly and slower
+;; cadences, where the org-habit graph (built for daily habits over ~3 weeks) is
+;; too coarse. Month and year lengths are approximated (30 / 365 days).
+
+(defvar my/habit-report-windows '(("d" . 30) ("w" . 12) ("m" . 12) ("y" . 5))
+  "How many periods to look back, keyed by the repeat unit.")
+
+(defun my/habit--period-days (count unit)
+  "Length in days of COUNT repeats of UNIT (d/w/m/y); months and years approx."
+  (* count (pcase unit ("d" 1) ("w" 7) ("m" 30) ("y" 365) (_ 1))))
+
+(defun my/habit--window (unit)
+  "Number of periods to score for repeat UNIT."
+  (or (cdr (assoc unit my/habit-report-windows)) 12))
+
+(defun my/habit--done-times ()
+  "Emacs times of the DONE state-changes logged in the current subtree."
+  (let ((end (save-excursion (org-end-of-subtree t t)))
+        times)
+    (save-excursion
+      (while (re-search-forward "State \"DONE\".*?\\[\\([^]]+\\)\\]" end t)
+        (push (org-time-string-to-time (match-string 1)) times)))
+    times))
+
+(defun my/habit-report ()
+  "Report adherence for every recurring entry in the agenda files.
+For each entry with a repeater, count over the last N periods (N and the period
+length taken from the repeater) how many periods had at least one DONE, and show
+the ratio and percentage, worst first."
+  (interactive)
+  (let (rows)
+    (org-map-entries
+     (lambda ()
+       (let ((repeat (org-get-repeat)))
+         (when (and repeat (string-match "\\([0-9]+\\)\\([hdwmy]\\)" repeat))
+           (let* ((count (string-to-number (match-string 1 repeat)))
+                  (unit (let ((u (match-string 2 repeat))) (if (string= u "h") "d" u)))
+                  (pd (my/habit--period-days count unit))
+                  (win (my/habit--window unit))
+                  (times (my/habit--done-times))
+                  (now (current-time))
+                  (hits 0))
+             (dotimes (i win)
+               (let ((hi (time-subtract now (days-to-time (* i pd))))
+                     (lo (time-subtract now (days-to-time (* (1+ i) pd)))))
+                 (when (seq-some (lambda (tm) (and (time-less-p lo tm)
+                                                   (not (time-less-p hi tm))))
+                                 times)
+                   (setq hits (1+ hits)))))
+             (push (list (org-get-heading t t t t)
+                         (mapconcat #'identity (org-get-tags) ":")
+                         repeat hits win
+                         (round (* 100.0 (/ hits (float win)))))
+                   rows)))))
+     nil 'agenda)
+    (setq rows (sort rows (lambda (a b) (< (nth 5 a) (nth 5 b)))))
+    (with-current-buffer (get-buffer-create "*Habit report*")
+      (let ((inhibit-read-only t))
+        (erase-buffer)
+        (insert (format "Recurring-task adherence  (as of %s)\n\n"
+                        (format-time-string "%Y-%m-%d")))
+        (insert (format "%-30s %-14s %-7s %-9s %s\n"
+                        "Entry" "Tags" "Repeat" "Done" "Adherence"))
+        (insert (make-string 74 ?-) "\n")
+        (dolist (r rows)
+          (insert (format "%-30s %-14s %-7s %-9s %3d%%\n"
+                          (truncate-string-to-width (nth 0 r) 30)
+                          (nth 1 r) (nth 2 r)
+                          (format "%d/%d" (nth 3 r) (nth 4 r))
+                          (nth 5 r)))))
+      (goto-char (point-min))
+      (display-buffer (current-buffer)))))
+
+(define-key global-map "\C-ch" 'my/habit-report)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
