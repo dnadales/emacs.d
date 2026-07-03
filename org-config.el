@@ -16,11 +16,13 @@
 (defvar my/maybe-someday-path (concat org-directory "maybe-someday.org"))
 (defvar my/notes-path (concat org-directory "notes/notes.org"))
 (defvar my/personal-journal-path (concat org-directory "personal/journal.org"))
+(defvar my/personal-calendar-path (concat org-directory "personal/calendar.org")
+  "Encrypted (git-crypt) calendar of sensitive dated items, e.g. health follow-ups.")
 (defvar my/personal-notes-dir (concat org-directory "personal/notes/")
   "Directory of atomic personal notes, one file per note. Encrypted via git-crypt.")
 
 ;; NOTE: use a list in case I want to add more agenda files.
-(setq org-agenda-files (list my/calendar-path my/next-actions-path))
+(setq org-agenda-files (list my/calendar-path my/next-actions-path my/personal-calendar-path))
 
 (setq org-default-notes-file my/calendar-path)
 
