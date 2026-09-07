@@ -22,7 +22,10 @@
   :custom
   (lsp-completion-provider :capf)
   (lsp-log-io nil)
-  (lsp-enable-snippet t))
+  (lsp-enable-snippet t)
+  ;; lsp-mode registers these clients for every buffer it can match, then
+  ;; reports the missing binary. rls is dead, and semgrep is not installed.
+  (lsp-disabled-clients '(rls semgrep-ls)))
 
 (use-package lsp-ui
   :commands lsp-ui-mode)
