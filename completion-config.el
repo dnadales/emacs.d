@@ -105,6 +105,11 @@
   (add-hook 'completion-at-point-functions #'cape-file)
   (add-hook 'completion-at-point-functions #'cape-dabbrev))
 
+;; Snippet engine. lsp-mode needs it to expand the placeholder edits that
+;; rust-analyzer and haskell-language-server send. Only on in LSP buffers.
+(use-package yasnippet
+  :hook (lsp-mode . yas-minor-mode))
+
 ;; which-key is built-in since Emacs 30.
 (which-key-mode)
 

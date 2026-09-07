@@ -20,7 +20,10 @@
 (use-package lsp-mode
   :commands lsp
   :custom
-  (lsp-completion-provider :capf)
+  ;; :capf means "turn on company-mode" in lsp-mode. We use corfu, so tell
+  ;; lsp to configure no popup. It still adds lsp-completion-at-point to
+  ;; completion-at-point-functions, which corfu reads.
+  (lsp-completion-provider :none)
   (lsp-log-io nil)
   (lsp-enable-snippet t)
   ;; lsp-mode registers these clients for every buffer it can match, then
