@@ -13,7 +13,7 @@
 
 (use-package haskell-mode
   :hook ((haskell-mode . interactive-haskell-mode)
-         (haskell-mode . lsp))
+         (haskell-mode . lsp-deferred))
   :config
   (setq haskell-process-type 'cabal-repl))
 
@@ -36,10 +36,10 @@
 (use-package lsp-haskell
   :after lsp-mode
   :custom
-  (lsp-haskell-server-path "haskell-language-server-wrapper")
+  (lsp-haskell-server-path "haskell-language-server")
   (lsp-haskell-plugin-stan-global-on nil))
 
-(add-hook 'haskell-literate-mode-hook #'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp-deferred)
 
 (put 'haskell-stylish-on-save 'safe-local-variable #'booleanp)
 
